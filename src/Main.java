@@ -3,8 +3,9 @@ import java.util.concurrent.ForkJoinPool;
 
 public class Main {
     public static void main(String[] args) {
-        String folderPath = "C:\\Users\\evg_p\\Downloads";
-        long sizeLimit = 50 * 1024 * 1024;
+        ParametersBag bag = new ParametersBag(args);
+        String folderPath = bag.getPath();
+        long sizeLimit = bag.getSizeLimit();
 
         File file = new File(folderPath);
         Node root = new Node(file, sizeLimit);
@@ -15,8 +16,6 @@ public class Main {
         ForkJoinPool pool = new ForkJoinPool();
         pool.invoke(calculator);
         System.out.println(root);
-
-//        System.out.println(getFolderSize(file));
 
         long duration = System.currentTimeMillis() - start;
         System.out.println(duration + " ms");
