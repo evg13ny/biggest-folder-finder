@@ -1,8 +1,8 @@
 import java.io.File;
 
 public class ParametersBag {
-    private long sizeLimit;
-    private String path;
+    private long sizeLimit = 0;
+    private String path = "";
 
     public ParametersBag(String[] args) {
         setSizeLimit(args);
