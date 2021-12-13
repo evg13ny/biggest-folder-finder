@@ -19,7 +19,8 @@ public class SizeCalculator {
         return (long) switch (letters) {
             case "K", "Kb" -> numbers * 1024;
             case "M", "Mb" -> numbers * Math.pow(1024, 2);
-            case "T", "Tb" -> numbers * Math.pow(1024, 3);
+            case "G", "Gb" -> numbers * Math.pow(1024, 3);
+            case "T", "Tb" -> numbers * Math.pow(1024, 4);
             default -> numbers;
         };
     }

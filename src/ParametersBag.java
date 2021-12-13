@@ -13,7 +13,7 @@ public class ParametersBag {
             throw new IllegalArgumentException("Указанного файла или папки не существует");
         } else if (getPath().equals("")) {
             throw new IllegalArgumentException("Указан неверный путь. Используйте -d");
-        } else if (getSizeLimit() <= 0) {
+        } else if (getSizeLimit() < 0) {
             throw new IllegalArgumentException("Указан неверный лимит. Используйте -l");
         }
     }
